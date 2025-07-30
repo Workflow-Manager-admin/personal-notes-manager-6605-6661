@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+// PUBLIC_INTERFACE
+test('renders Personal Notes header and New Note button', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Personal Notes/i)).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /new note/i })).toBeInTheDocument();
 });
